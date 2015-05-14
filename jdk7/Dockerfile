@@ -25,7 +25,7 @@ RUN mkdir /usr/java64 ; cd /usr/java64/ ; \
 RUN wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/tzupdater/2.0.0/tzupdater-2_0_0-${TZUPDATER}.zip && \
     unzip tzupdater-2_0_0-${TZUPDATER}.zip && mv tzupdater-2.0.0-${TZUPDATER}/tzupdater.jar /
 
-RUN ${JAVA_HOME}/bin/java -jar /tzupdater.jar -t -v || ${JAVA_HOME}/bin/java -jar /tzupdater.jar -u -v
+RUN ${JAVA_HOME}/bin/java -jar /tzupdater.jar -t -v || ${JAVA_HOME}/bin/java -jar /tzupdater.jar -u -v && rm -rf /tzupdater-2_0_0-${TZUPDATER}.zip tzupdater-2.0.0-${TZUPDATER} /tzupdater.jar
 
 CMD /bin/bash
 
