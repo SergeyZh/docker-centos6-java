@@ -4,13 +4,9 @@ MAINTAINER Sergey Zhukov, sergey@jetbrains.com
 
 RUN yum update -y && yum install -y unzip
 
-ENV JAVA_VER 1.7.0_79
-ENV JAVA_DWL_VER 7u79
-ENV JAVA_DWL_BVER b15
-
-ENV JAVA_HOME /usr/java64/current
-ENV JDK_HOME ${JAVA_HOME}
-ENV PATH ${JAVA_HOME}/bin:${PATH}
+ENV JAVA_VER=1.7.0_79 JAVA_DWL_VER=7u79 JAVA_DWL_BVER=b15 \
+    JAVA_HOME=/usr/java64/current
+ENV JDK_HOME=${JAVA_HOME} PATH=${JAVA_HOME}/bin:${PATH}
 
 ENV TZUPDATER 2015a
 
