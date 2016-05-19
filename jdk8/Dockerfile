@@ -2,7 +2,7 @@ FROM sergeyzh/centos6-epel
 
 MAINTAINER Sergey Zhukov, sergey@jetbrains.com & Andrey Sizov, andrey.sizov@jetbrains.com
 
-RUN yum update -y && yum install -y unzip
+RUN yum clean all && rpm --rebuilddb && yum update -y && yum install -y unzip
 
 ENV JAVA_VER=1.8.0_91 JAVA_DWL_VER=8u91 JAVA_DWL_BVER=b14 \
     JAVA_HOME=/usr/java64/current
